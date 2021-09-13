@@ -25,5 +25,3 @@ export default function getSumOfDigits(n) {
   }
   return sum;
 }
-
-console.log(getSumOfDigits(221));
