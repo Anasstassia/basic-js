@@ -13,7 +13,8 @@ import { NotImplementedError } from "../extensions/index.js";
  */
 export default function deleteDigit(n) {
   let max = 0;
-  let digits = [...`${n}`];
+  // let digits = [...`${n}`];
+  let digits = n.toString().split("");
   for (let i = 0; i < digits.length; i++) {
     let newMax = Number(digits.filter((el, index) => index !== i).join(""));
     if (newMax > max) {
