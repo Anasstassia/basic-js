@@ -27,16 +27,7 @@ export default function getDNSStats(domains) {
   const arr = domains.map((domain) => domain.split("."));
   arr.forEach((el) => {
     let property = `.${el[el.length - 1]}`;
-    // for (let i = 1; i < el.length + 1; i++) {
-    //   if (obj.hasOwnProperty(property)) {
-    //     obj[property] += 1;
-    //   } else {
-    //     obj[property] = 1;
-    //   }
-    //   property += `.${el[el.length - 1 - i]}`;
-    //   //   console.log(property);
-    // }
-    el.forEach((e, i) => {
+    for (let i = 1; i < el.length + 1; i++) {
       if (obj.hasOwnProperty(property)) {
         obj[property] += 1;
       } else {
@@ -44,7 +35,7 @@ export default function getDNSStats(domains) {
       }
       property += `.${el[el.length - 1 - i]}`;
       //   console.log(property);
-    });
+    }
   });
   return obj;
 }
