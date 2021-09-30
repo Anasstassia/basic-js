@@ -16,7 +16,7 @@ export default function deleteDigit(n) {
   // let digits = [...`${n}`];
   let digits = n.toString().split("");
   for (let i = 0; i < digits.length; i++) {
-    let newMax = Number(digits.filter((el, index) => index !== i).join(""));
+    let newMax = parseInt(digits.filter((el, index) => index !== i).join(""));
     if (newMax > max) {
       max = newMax;
     }
