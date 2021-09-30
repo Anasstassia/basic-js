@@ -12,14 +12,27 @@ import { NotImplementedError } from "../extensions/index.js";
  *
  */
 export default function deleteDigit(n) {
-  let max = 0;
-  // let digits = [...`${n}`];
-  let digits = n.toString().split("");
-  for (let i = 0; i < digits.length; i++) {
-    let newMax = parseInt(digits.filter((el, index) => index !== i).join(""));
-    if (newMax > max) {
-      max = newMax;
+  // let max = 0;
+  // // let digits = [...`${n}`];
+  // let digits = n.toString().split("");
+  // for (let i = 0; i < digits.length; i++) {
+  //   let newMax = parseInt(digits.filter((el, index) => index !== i).join(""));
+  //   if (newMax > max) {
+  //     max = newMax;
+  //   }
+  // }
+  // return max;
+
+  let res = "";
+  let a = n
+    .toString()
+    .split("")
+    .map((item) => Number(item));
+  let b = a.indexOf(Math.min(...a));
+  for (let i = 0; i < a.length; i++) {
+    if (i != b) {
+      res += a[i];
     }
   }
-  return max;
+  return +res;
 }
