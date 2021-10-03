@@ -26,15 +26,15 @@ import { NotImplementedError } from "../extensions/index.js";
 export default function minesweeper(matrix) {
   return matrix.map((row, y) =>
     row.map((el, x) => {
-      const xmin1y = row?.[x - 1];
-      const xplus1y = row?.[x + 1];
+      const xmin1y = row && row[x - 1];
+      const xplus1y = row && row[x + 1];
 
-      const xymin1 = matrix?.[y - 1]?.[x];
-      const xyplus1 = matrix?.[y + 1]?.[x];
-      const xmin1ymin1 = matrix?.[y - 1]?.[x - 1];
-      const xplus1yplus1 = matrix?.[y + 1]?.[x + 1];
-      const xplus1ymin1 = matrix?.[y + 1]?.[x - 1];
-      const xmin1plus1 = matrix?.[y - 1]?.[x + 1];
+      const xymin1 = matrix && matrix[y - 1] && matrix[y - 1][x];
+      const xyplus1 = matrix && matrix[y + 1] && matrix[y + 1][x];
+      const xmin1ymin1 = matrix && matrix[y - 1] && matrix[y - 1][x - 1];
+      const xplus1yplus1 = matrix && matrix[y + 1] && matrix[y + 1][x + 1];
+      const xplus1ymin1 = matrix && matrix[y + 1] && matrix[y + 1][x - 1];
+      const xmin1plus1 = matrix && matrix[y - 1] && matrix[y - 1][x + 1];
 
       const currentValue = [
         xmin1y,
